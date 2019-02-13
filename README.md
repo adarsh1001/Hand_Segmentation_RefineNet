@@ -1,1 +1,1 @@
-# Hand_Segmentation_RefineNet
+Hand Segmentation in the Wild using RefineNet in Python.
