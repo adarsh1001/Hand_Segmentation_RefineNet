@@ -1,4 +1,4 @@
-from resnet import rf_lw101
+from refinenet import refinenet
 import cv2
 
 import matplotlib
@@ -9,7 +9,7 @@ import numpy as np
 import torch
 import os
 
-cmap = np.load('cmap.npy')
+cmap = np.load('weights/cmap.npy')
 img_dir = 'images/'
 imgs = os.listdir(img_dir)
 numC = 7
@@ -18,7 +18,7 @@ img_scale = 1./255
 img_mean = np.array([0.485, 0.456, 0.406]).reshape((1, 1, 3))
 img_std = np.array([0.229, 0.224, 0.225]).reshape((1, 1, 3))
 
-net = rf_lw101(numC, pretrained=True).eval()
+net = refinenet(numC, pretrained=True).eval()
 net = net.cuda() #Run only with Cuda support!
 idx = 1
 
